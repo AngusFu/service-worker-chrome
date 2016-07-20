@@ -1,0 +1,26 @@
+{
+    "name": "ServiceWorker",
+    "description": "A Chrome extension for opening `chrome://serviceworker-internals/`",
+    "version": "2.0",
+    "permissions": [
+        "tabs",
+        "activeTab",
+        "webNavigation",
+        "\u003Call_urls\u003E"
+    ],
+    "browser_action": {
+        "default_icon": "./img/sword_64.png"
+    },
+    "icons": {
+        "64": "./img/sword_64.png"
+    },
+    "content_scripts": [{
+        "run_at": "document_end",
+        "matches": ["https://*/*", "http://localhost/*"],
+        "js": ["./sw.js"]
+    }],
+    "background": {
+        "scripts":["./background.js"]
+    },
+    "manifest_version": 2
+}

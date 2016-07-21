@@ -16,7 +16,7 @@
     },
     "content_scripts": [{
         "run_at": "document_end",
-        "matches": ["https://*/*", "http://localhost"],
+        "matches": ["https://*/*", "http://localhost/*"],
         "js": ["./sw.js"]
     }],
     "background": {
